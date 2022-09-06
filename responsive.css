@@ -19,7 +19,7 @@
     }
 
     .bgimage {
-        background: url("../Media/Background Images/taj-dubai.jpg");
+        background: url("taj-dubai.jpg");
         background-size: cover;
         background-position: center;
         height: calc(100vh - 92px);
@@ -506,7 +506,7 @@ footer ul li a:hover{
     }
 
     .bgimage {
-        background: url("../Media/Background Images/taj-dubai.jpg");
+        background: url("taj-dubai.jpg");
         background-size: cover;
         background-position: center;
         /* height: calc(100vh - 92px); */
@@ -621,7 +621,7 @@ footer ul li a:hover{
     }
 
     .bgimage {
-        background: url("../Media/Background Images/taj-dubai.jpg");
+        background: url("taj-dubai.jpg");
         background-size: cover;
         background-position: center;
         /* height: calc(100vh - 92px); */
