@@ -1,0 +1,131 @@
+/* For Menu Selected Item  */
+#a5 {
+
+    background-color: white;
+    color: black;
+    border: 3px solid #b39758;
+
+}
+
+*{
+    font-family: 'Ubuntu', sans-serif;
+    /* font-weight: 400; */
+}
+
+
+
+.maincontainer{
+    margin-top: 50px;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+
+}
+.container{
+  max-width: 600px;
+  width: 100%;
+  background-color: #fff;
+  padding: 25px 30px;
+  border-radius: 5px;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+
+}
+.container .title{
+  font-size: 45px;
+  font-weight: 600;
+  color: #d1a745;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.content form .user-details{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 20px 0 12px 0;
+  flex-direction: column;
+}
+form .user-details .input-box{
+  margin-bottom: 15px;
+  width: calc(100% / 2 - 20px);
+}
+form .input-box span.details{
+  display: block;
+  font-weight: 500;
+  margin-bottom: 5px;
+}
+.user-details .input-box input{
+  height: 45px;
+  width: 100%;
+  outline: none;
+  font-size: 16px;
+  border-radius: 5px;
+  padding-left: 15px;
+  border: 1px solid #ccc;
+  border-bottom-width: 2px;
+  transition: all 0.3s ease;
+}
+.user-details .input-box input:focus,
+.user-details .input-box input:valid{
+  border-color: #b39758;
+  box-shadow: 1px 1px 2px #d1a745;
+}
+ 
+ 
+ form .category label{
+   display: flex;
+   align-items: center;
+   cursor: pointer;
+ }
+ 
+ form .button{
+   height: 45px;
+   margin: 30px 0;
+   display:flex;
+   justify-content: center;
+ }
+ form .button input{
+   height: 100%;
+   width: 30%;
+   border-radius: 5px;
+   border: none;
+   color: #fff;
+   font-size: 18px;
+   font-weight: 500;
+   letter-spacing: 1px;
+   cursor: pointer;
+   transition: all 0.3s ease;
+   background-color: #d1a745;
+    align-self: center;
+ }
+ form .button input:hover{
+  /* transform: scale(0.99); */
+  /* background: linear-gradient(-135deg, #b39758, #0000); */
+  background-color: #b39758;
+  
+  }
+ @media(max-width: 584px){
+ .container{
+  max-width: 100%;
+}
+form .user-details .input-box{
+    margin-bottom: 15px;
+    width: 100%;
+  }
+  form .category{
+    width: 100%;
+  }
+  .content form .user-details{
+    max-height: 300px;
+    overflow-y: scroll;
+  }
+  .user-details::-webkit-scrollbar{
+    width: 5px;
+  }
+  }
+  @media(max-width: 459px){
+  .container .content .category{
+    flex-direction: column;
+  }
+}
