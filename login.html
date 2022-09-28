@@ -50,7 +50,7 @@
               <span class="details">Password</span>
               <input type="password" id="password" placeholder="Enter your password" required>
             </div>
-            <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span style="font-size: 18px;color: rgba(0, 0, 0, 0.8);">Show Password</span></label></div>
+            <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span style="font-size: 18px;color: rgba(0, 0, 0, 0.8);" id="hideandshow">Show Password</span></label></div>
 
           </div>
 
@@ -71,11 +71,13 @@
       var type = password.getAttribute('type');
       if (type === 'password'){
           password.setAttribute('type','text');
+          document.getElementById('hideandshow').innerText = "Hide Password";
           // elem.innerText = "Hide Password";
       }
       
       else{
           password.setAttribute('type','password');
+          document.getElementById('hideandshow').innerText = "Show Password";
           // elem.innerText = "Show Password";
       }
 }
