@@ -5,3 +5,10 @@
     border: 3px solid #b39758;
 
 }
+
+#a2,#a3,#a1{
+	border: 3px solid transparent;
+}
+#a2:hover,#a3:hover,#a1:hover{
+	border: 3px solid #b39758;
+}
