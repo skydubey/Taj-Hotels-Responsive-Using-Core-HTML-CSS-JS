@@ -52,7 +52,7 @@
             </div>
 
             <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span
-                  style="font-size: 18px;color: rgba(0, 0, 0, 0.8);" id="hideandshow">Show Password</span></label></div>
+                  style="font-size: 18px;color: rgba(0, 0, 0, 0.8);" id="hideaandshow">Show Password</span></label></div>
 
           </div>
 
@@ -72,14 +72,14 @@
 
       var type = password.getAttribute('type');
       if (type === 'password') {
-        password.setAttribute('type', 'text');
-        document.getElementById('hideandshow').innerText = "Hide Password";
+        password.setAttribute('type','text');
+        document.getElementById('hideaandshow').innerText = "Hide Password";
         // elem.innerText = "Hide Password";
       }
 
       else {
-        password.setAttribute('type', 'password');
-        document.getElementById('hideandshow').innerText = "Show Password";
+        password.setAttribute('type','password');
+        document.getElementById('hideaandshow').innerText = "Show Password";
         // elem.innerText = "Show Password";
       }
     }
