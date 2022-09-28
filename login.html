@@ -48,15 +48,13 @@
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="password" placeholder="Enter your password" required>
+              <input type="password" id="password" placeholder="Enter your password" required>
             </div>
-
-            <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span
-                  style="font-size: 18px;color: rgba(0, 0, 0, 0.8);" id="hideaandshow">Show Password</span></label></div>
+            <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span style="font-size: 18px;color: rgba(0, 0, 0, 0.8);">Show Password</span></label></div>
 
           </div>
 
-          <div class="button">
+          <div class="button" >
             <input type="submit" value="Login">
           </div>
         </form>
@@ -64,27 +62,23 @@
     </div>
   </div>
 
+</body>
+<script>
+  var password = document.getElementById('password');
 
-  <script>
-    var password = document.getElementById('password');
-
-    function toggle(elem) {
+  function toggle(elem){
 
       var type = password.getAttribute('type');
-      if (type === 'password') {
-        password.setAttribute('type','text');
-        document.getElementById('hideaandshow').innerText = "Hide Password";
-        // elem.innerText = "Hide Password";
+      if (type === 'password'){
+          password.setAttribute('type','text');
+          // elem.innerText = "Hide Password";
       }
-
-      else {
-        password.setAttribute('type','password');
-        document.getElementById('hideaandshow').innerText = "Show Password";
-        // elem.innerText = "Show Password";
+      
+      else{
+          password.setAttribute('type','password');
+          // elem.innerText = "Show Password";
       }
-    }
-  </script>
-
-</body>
+}
+</script>
 
 </html>
