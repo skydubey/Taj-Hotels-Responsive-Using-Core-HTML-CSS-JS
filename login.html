@@ -51,15 +51,39 @@
               <input type="password" placeholder="Enter your password" required>
             </div>
 
+            <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span
+                  style="font-size: 18px;color: rgba(0, 0, 0, 0.8);" id="hideandshow">Show Password</span></label></div>
+
           </div>
 
-          <div class="button" >
+          <div class="button">
             <input type="submit" value="Login">
           </div>
         </form>
       </div>
     </div>
   </div>
+
+
+  <script>
+    var password = document.getElementById('password');
+
+    function toggle(elem) {
+
+      var type = password.getAttribute('type');
+      if (type === 'password') {
+        password.setAttribute('type', 'text');
+        document.getElementById('hideandshow').innerText = "Hide Password";
+        // elem.innerText = "Hide Password";
+      }
+
+      else {
+        password.setAttribute('type', 'password');
+        document.getElementById('hideandshow').innerText = "Show Password";
+        // elem.innerText = "Show Password";
+      }
+    }
+  </script>
 
 </body>
 
