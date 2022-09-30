@@ -6,15 +6,13 @@
   border: 3px solid #b39758;
 
 }
-
 #a1,#a2,#a3,#a4{
 	border: 3px solid transparent;
 }
 #a1:hover,#a2:hover,#a3:hover,#a4:hover{
 	border: 3px solid #b39758;
-  transition: 0.6s;
+  transition: 0.5s;
 }
-
 
 /* For Form Container */
 
@@ -79,6 +77,7 @@ form .input-box span.details {
   display: block;
   font-weight: 500;
   margin-bottom: 5px;
+  font-weight: bold;
 }
 
 .user-details .input-box input {
@@ -88,16 +87,16 @@ form .input-box span.details {
   font-size: 16px;
   border-radius: 5px;
   padding-left: 15px;
-  border: 1px solid #ccc;
-  border-bottom-width: 2px;
+  border: 2px solid grey;
+  /* border-bottom-width: 2px; */
   transition: all 0.3s ease;
 }
 
-.user-details .input-box input:focus,
+/* .user-details .input-box input:focus,
 .user-details .input-box input:valid {
   border-color: #b39758;
   box-shadow: 1px 1px 2px #d1a745;
-}
+} */
 
 form .gender-details .gender-title {
   font-size: 20px;
@@ -181,7 +180,7 @@ form .button input:hover {
   }
 
   .content form .user-details {
-    max-height: 600px;
+    max-height: 800px;
     overflow-y: scroll;
   }
 
@@ -194,4 +193,22 @@ form .button input:hover {
   .container .content .category {
     flex-direction: column;
   }
+}
+
+
+
+/* For Error Handling Part */
+
+.errorfield {
+  color: red;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.user-details .input-box .success{
+  border: 2px solid green;
+}
+
+.user-details .input-box .error{
+  border: 2px solid red;
 }
