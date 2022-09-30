@@ -9,7 +9,9 @@
   <link rel="stylesheet" href="master.css">
   <link rel="stylesheet" href="login.css">
   <link rel="stylesheet" href="responsive.css">
-  <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+  <!-- <script src="https://kit.fontawesome.com/a076d05399.js"></script> -->
+  <link rel='stylesheet' href='https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.min.css'>
+
   <title>Login</title>
 </head>
 
@@ -34,28 +36,32 @@
     <div class="container">
       <div class="title">Login</div>
       <div class="content">
-        <form action="#">
+        <form action="" onsubmit="return validateForm()" novalidate>
           <div class="user-details">
 
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your username" required>
+              <input type="text" placeholder="Enter your username" required id="username" class="demo">
+              <p id="unameerror" class="errorfield"></p>
             </div>
 
             <div class="input-box">
               <span class="details">Phone Number</span>
-              <input type="text" placeholder="Enter your number" required>
+              <input type="number" placeholder="Enter your number" required id="mobile" class="demo">
+              <p id="mobileerror" class="errorfield"></p>
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="password" id="password" placeholder="Enter your password" required>
+              <input type="password" id="password" placeholder="Enter your password" required class="demo">
+              <p id="pwderror" class="errorfield"></p>
             </div>
-            <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span style="font-size: 18px;color: rgba(0, 0, 0, 0.8);" id="hideandshow">Show Password</span></label></div>
+            <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span
+                  style="font-size: 18px;color: rgba(0, 0, 0, 0.8);" id="hideandshow">Show Password</span></label></div>
 
           </div>
 
-          <div class="button" >
-            <input type="submit" value="Login">
+          <div class="button">
+            <input type="submit" value="Login" class="login">
           </div>
         </form>
       </div>
@@ -64,23 +70,136 @@
 
 </body>
 <script>
-  var password = document.getElementById('password');
 
-  function toggle(elem){
+  let password = document.getElementById('password');
+  let username = document.getElementById('username');
+  let mobile = document.getElementById('mobile');
+  let flag = 1;
 
-      var type = password.getAttribute('type');
-      if (type === 'password'){
-          password.setAttribute('type','text');
-          document.getElementById('hideandshow').innerText = "Hide Password";
-          // elem.innerText = "Hide Password";
-      }
-      
-      else{
-          password.setAttribute('type','password');
-          document.getElementById('hideandshow').innerText = "Show Password";
-          // elem.innerText = "Show Password";
-      }
-}
+
+
+  function validateForm() {
+
+    // For Username Validation 
+
+    if (username.value == "") {
+      document.getElementById('unameerror').style.color = "red";
+      document.getElementById('username').className = "error";
+      document.getElementById('unameerror').innerHTML = "Username cannot be blank"
+      flag = 0;
+    }
+
+    else if (username.value.length < 6) {
+      document.getElementById('unameerror').style.color = "red";
+      document.getElementById('username').className = "error";
+      document.getElementById('unameerror').innerHTML = "Enter atleast 6 characters"
+      flag = 0;
+    }
+
+    else {
+      document.getElementById('unameerror').style.color = "green";
+      document.getElementById('username').className = "success";
+      document.getElementById('unameerror').innerHTML = "Looks good!"
+      flag = flag + 1;
+    }
+
+
+    // For Mobile Number Validation
+
+    if (mobile.value == "") {
+
+      document.getElementById('mobileerror').style.color = "red";
+      document.getElementById('mobile').className = "error";
+      document.getElementById('mobileerror').innerHTML = "Mobile Number cannot be blank"
+      flag = 0;
+    }
+
+    else if (mobile.value.length != 10) {
+      document.getElementById('mobileerror').style.color = "red";
+      document.getElementById('mobile').className = "error";
+      document.getElementById('mobileerror').innerHTML = "Enter Valid 10 digits"
+      flag = 0;
+    }
+
+    else {
+      document.getElementById('mobileerror').style.color = "green";
+      document.getElementById('mobile').className = "success";
+      document.getElementById('mobileerror').innerHTML = "Looks good!"
+      flag = flag + 1;
+    }
+
+
+
+
+    // For Password Number Validation
+
+    if (password.value == "") {
+
+      document.getElementById('pwderror').style.color = "red";
+      document.getElementById('password').className = "error";
+      document.getElementById('pwderror').innerHTML = "Password cannot be blank"
+      flag = 0;
+    }
+
+    else if (password.value.length < 8) {
+      document.getElementById('pwderror').style.color = "red";
+      document.getElementById('password').className = "error";
+      document.getElementById('pwderror').innerHTML = "Password should be atleast 8 characters"
+      flag = 0;
+    }
+
+    else {
+      document.getElementById('pwderror').style.color = "green";
+      document.getElementById('password').className = "success";
+      document.getElementById('pwderror').innerHTML = "Looks good!"
+      flag = flag + 1;
+    }
+
+
+    if (flag >= 3) {
+      alert("Login Successful");
+      return true;
+    }
+    else {
+      return false;
+    }
+
+
+
+
+    // return false;
+  }
+
+
+
+
+
+
+
+
+
+
+
+  // For Functionality of Show and Hide Password
+
+  function toggle(elem) {
+
+    var type = password.getAttribute('type');
+    if (type === 'password') {
+      password.setAttribute('type', 'text');
+      document.getElementById('hideandshow').innerText = "Hide Password";
+      // elem.innerText = "Hide Password";
+    }
+
+    else {
+      password.setAttribute('type', 'password');
+      document.getElementById('hideandshow').innerText = "Show Password";
+      // elem.innerText = "Show Password";
+    }
+  }
+
+  // End of Show and Hide Password Funtionality
 </script>
+<script src="https://cdn.jsdelivr.net/npm/sweetalert2@10.10.1/dist/sweetalert2.all.min.js"></script>
 
 </html>
