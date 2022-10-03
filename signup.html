@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="shortcut icon" href="logo--Taj.png" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" />
   <link rel="stylesheet" href="master.css">
   <link rel="stylesheet" href="signup.css">
   <link rel="stylesheet" href="responsive.css">
@@ -64,7 +64,7 @@
             </div>
             <div class="input-box">
               <span class="details">Confirm Password</span>
-              <input type="password" id="" placeholder="Confirm your password" required id="cpwd">
+              <input type="password" id="cpwd" placeholder="Confirm your password" required>
               <p class="errorfield" id="cpwderror"></p>
             </div>
             <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span
@@ -77,15 +77,15 @@
             <input type="radio" name="gender" id="dot-3" required>
             <span class="gender-title">Gender</span>
             <div class="category">
-              <label for="dot-1">
+              <label for="dot-1" id="dot-1">
                 <span class="dot one"></span>
                 <span class="gender">Male</span>
               </label>
-              <label for="dot-2">
+              <label for="dot-2" id="dot-2">
                 <span class="dot two"></span>
                 <span class="gender">Female</span>
               </label>
-              <label for="dot-3">
+              <label for="dot-3" id="dot-3">
                 <span class="dot three"></span>
                 <span class="gender">Prefer not to say</span>
               </label>
@@ -109,7 +109,10 @@
   let pwd = document.getElementById('pwd');
   let cpwd = document.getElementById('cpwd');
   let flag = 1;
-  var letters = /^[a-z A-Z]*$/
+  let letters = /^[a-z A-Z]*$/;
+  // let pwdregex = /^[0-9a-zA-Z]$/;
+  let emailregex = /^([_\-\.0-9a-zA-Z]+)@([_\-\.0-9a-zA-Z]+)\.([a-zA-Z]){2,3}$/;
+  let emailVal = email.value;
 
 
 
@@ -166,7 +169,8 @@
 
 
 
-    // For Password Number Validation
+    // For Password Validation
+
 
     if (password.value == "") {
 
@@ -176,17 +180,54 @@
       flag = 0;
     }
 
-    else if (password.value.length < 8) {
+    else if (password.value.length < 8 || password.value.length > 15) {
       document.getElementById('pwderror').style.color = "red";
       document.getElementById('password').className = "error";
-      document.getElementById('pwderror').innerHTML = "Password should be atleast 8 characters"
+      document.getElementById('pwderror').innerHTML = "Password should be atleast 8 characters upto 15"
       flag = 0;
     }
+
+    // else if (!pwdregex.test(password.value)) {
+    //   document.getElementById('pwderror').style.color = "red";
+    //   document.getElementById('password').className = "error";
+    //   document.getElementById('pwderror').innerHTML = "Password must contain UPPERCASE, lowercase & Numericals"
+    //   flag = 0;
+    // }
 
     else {
       document.getElementById('pwderror').style.color = "green";
       document.getElementById('password').className = "success";
       document.getElementById('pwderror').innerHTML = "Looks good!"
+      flag = flag + 1;
+    }
+
+    // For Confirm Password Number Validation
+
+    if (cpwd.value == "") {
+
+      document.getElementById('cpwderror').style.color = "red";
+      document.getElementById('cpwd').className = "error";
+      document.getElementById('cpwderror').innerHTML = "Confirm Password cannot be blank"
+      flag = 0;
+    }
+
+    else if (cpwd.value.length < 8 || cpwd.value.length > 15) {
+      document.getElementById('cpwderror').style.color = "red";
+      document.getElementById('cpwd').className = "error";
+      document.getElementById('cpwderror').innerHTML = " Enter a valid Password"
+      flag = 0;
+    }
+    else if (cpwd.value !== password.value) {
+      document.getElementById('cpwderror').style.color = "red";
+      document.getElementById('cpwd').className = "error";
+      document.getElementById('cpwderror').innerHTML = " Password & Confirm Password does not match"
+      flag = 0;
+    }
+
+    else {
+      document.getElementById('cpwderror').style.color = "green";
+      document.getElementById('cpwd').className = "success";
+      document.getElementById('cpwderror').innerHTML = "Looks good!"
       flag = flag + 1;
     }
 
@@ -200,15 +241,15 @@
       document.getElementById('fnameerror').innerHTML = "Full name cannot be blank"
       flag = 0;
     }
-    
-    
-    else if (fname.value.length<8||fname.value.length>20) {
+
+
+    else if (fname.value.length < 8 || fname.value.length > 20) {
       document.getElementById('fnameerror').style.color = "red";
       document.getElementById('fname').className = "error";
       document.getElementById('fnameerror').innerHTML = "Full name should be of atleast 8 characters upto 20"
       flag = 0;
     }
-    
+
     else if (!letters.test(fname.value)) {
       document.getElementById('fnameerror').style.color = "red";
       document.getElementById('fname').className = "error";
@@ -226,6 +267,8 @@
 
     // For Email Validation 
 
+
+
     if (email.value == "") {
       document.getElementById('emailerror').style.color = "red";
       document.getElementById('email').className = "error";
@@ -233,24 +276,10 @@
       flag = 0;
     }
 
-    else if (email.value.length < 10 || email.value.length > 25) {
+    else if (!emailregex.test(email.value)) {
       document.getElementById('emailerror').style.color = "red";
       document.getElementById('email').className = "error";
-      document.getElementById('emailerror').innerHTML = "Email should be atleast 10 characters upto 25"
-      flag = 0;
-    }
-
-    else if (email.value.charAt(email.value.length-4)|| email.value.length > 25) {
-      document.getElementById('emailerror').style.color = "red";
-      document.getElementById('email').className = "error";
-      document.getElementById('emailerror').innerHTML = "Email should be atleast 10 characters upto 25"
-      flag = 0;
-    }
-
-    else if (email.value.indexOf('@')<=0) {
-      document.getElementById('emailerror').style.color = "red";
-      document.getElementById('email').className = "error";
-      document.getElementById('emailerror').innerHTML = "Please Enter a Valid Email"
+      document.getElementById('emailerror').innerHTML = "Please enter a valid email [yourname@example.com]"
       flag = 0;
     }
 
@@ -263,16 +292,8 @@
 
 
 
-
-
-
-
-
-
-
-
-    if (flag >= 4) {
-      alert("Login Successful");
+    if (flag >= 6) {
+      alert("Registration Successful");
       return true;
     }
     else {

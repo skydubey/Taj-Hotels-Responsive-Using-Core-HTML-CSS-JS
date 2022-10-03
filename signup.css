@@ -131,6 +131,11 @@ form .category label .dot {
 #dot-3:checked~.category label .three {
   background: #b39758;
   border-color: #d9d9d9;
+  
+}
+
+#dot-1,#dot-2,#dot-3{
+  margin-bottom:10px ;
 }
 
 form input[type="radio"] {
@@ -156,6 +161,7 @@ form .button input {
   /* background: linear-gradient(135deg, #b39758, #0000); */
   /* background-color: #b39758; */
   background-color: #d1a745;
+  margin-bottom: 50px;
 }
 
 form .button input:hover {
@@ -168,6 +174,7 @@ form .button input:hover {
 @media(max-width: 584px) {
   .container {
     max-width: 100%;
+    
   }
 
   form .user-details .input-box {
@@ -181,7 +188,10 @@ form .button input:hover {
 
   .content form .user-details {
     max-height: 800px;
-    overflow-y: scroll;
+    /* overflow-y: scroll; */
+    /* overflow-wrap: normal; */
+    display:flex ;
+    flex-wrap: wrap;
   }
 
   .user-details::-webkit-scrollbar {

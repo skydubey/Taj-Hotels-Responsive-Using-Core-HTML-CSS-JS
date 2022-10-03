@@ -90,10 +90,10 @@
       flag = 0;
     }
 
-    else if (username.value.length < 6) {
+    else if (username.value.length < 6 || username.value.length > 15) {
       document.getElementById('unameerror').style.color = "red";
       document.getElementById('username').className = "error";
-      document.getElementById('unameerror').innerHTML = "Enter atleast 6 characters"
+      document.getElementById('unameerror').innerHTML = "Enter atleast 6 characters upto 15"
       flag = 0;
     }
 
@@ -142,10 +142,10 @@
       flag = 0;
     }
 
-    else if (password.value.length < 8) {
+    else if (password.value.length < 8 || password.value.length > 15) {
       document.getElementById('pwderror').style.color = "red";
       document.getElementById('password').className = "error";
-      document.getElementById('pwderror').innerHTML = "Password should be atleast 8 characters"
+      document.getElementById('pwderror').innerHTML = "Password should be atleast 8 characters upto 15"
       flag = 0;
     }
 
