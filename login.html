@@ -37,7 +37,7 @@
     <div class="container">
       <div class="title">Login</div>
       <div class="content">
-        <form action="" onsubmit="return validateForm()" novalidate>
+        <form action="https://tajhotels.netlify.app/administration.html" onsubmit="return validateForm()" novalidate>
           <div class="user-details">
 
             <div class="input-box">
@@ -159,6 +159,7 @@
 
     if (flag >= 3) {
       // alert("Login Successful");
+      window.location.href = 'https://tajhotels.netlify.app/administration.html';
       return true;
     }
     else {

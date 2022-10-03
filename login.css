@@ -185,9 +185,13 @@ form .button input:hover {
 }
 
 .user-details .input-box .success{
-  border: 2px solid #198754;
+  box-shadow: 0 4px 8px 0 rgba(25, 135, 84, 0.2), 0 6px 20px 0 rgba(25, 135, 84, 0.2);
+  border: 2px solid green;
+  caret-color:green;
 }
 
 .user-details .input-box .error{
+  box-shadow: 0 4px 8px 0 rgba(220, 53, 69, 0.2), 0 6px 20px 0 rgba(220, 53, 69, 0.2);
   border: 2px solid red;
+  caret-color:red;
 }
