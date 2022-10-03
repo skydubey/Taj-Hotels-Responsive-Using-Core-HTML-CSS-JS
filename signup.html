@@ -39,32 +39,32 @@
           <div class="user-details">
             <div class="input-box">
               <span class="details">Full Name</span>
-              <input type="text" placeholder="Enter your name" required id="fname">
+              <input type="text" placeholder="Enter your name" required id="fname" onkeyup="validateForm()">
               <p class="errorfield" id="fnameerror"></p>
             </div>
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your username" required id="username">
+              <input type="text" placeholder="Enter your username" required id="username" onkeyup="validateForm()">
               <p class="errorfield" id="unameerror"></p>
             </div>
             <div class="input-box">
               <span class="details">Email</span>
-              <input type="text" placeholder="Enter your email" required id="email">
+              <input type="text" placeholder="Enter your email" required id="email" onkeyup="validateForm()">
               <p class="errorfield" id="emailerror"></p>
             </div>
             <div class="input-box">
               <span class="details">Phone Number</span>
-              <input type="number" placeholder="Enter your number" required id="mobile">
+              <input type="number" placeholder="Enter your number" required id="mobile" onkeyup="validateForm()">
               <p class="errorfield" id="mobileerror"></p>
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="password" id="password" placeholder="Enter your password" required id="pwd">
+              <input type="password" id="password" placeholder="Enter your password" required id="pwd" onkeyup="validateForm()">
               <p class="errorfield" id="pwderror"></p>
             </div>
             <div class="input-box">
               <span class="details">Confirm Password</span>
-              <input type="password" id="cpwd" placeholder="Confirm your password" required>
+              <input type="password" id="cpwd" placeholder="Confirm your password" required onkeyup="validateForm()">
               <p class="errorfield" id="cpwderror"></p>
             </div>
             <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span
@@ -291,14 +291,17 @@
     }
 
 
+      if (flag >= 6) {
+        return true;
+        // alert("Registration Successful");
+      }
+      else {
+        return false;
+      }
+  
 
-    if (flag >= 6) {
-      alert("Registration Successful");
-      return true;
-    }
-    else {
-      return false;
-    }
+
+
 
   }
 
