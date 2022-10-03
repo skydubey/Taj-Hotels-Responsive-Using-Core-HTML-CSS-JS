@@ -185,7 +185,7 @@ form .button input:hover {
 }
 
 .user-details .input-box .success{
-  border: 2px solid green;
+  border: 2px solid #198754;
 }
 
 .user-details .input-box .error{
