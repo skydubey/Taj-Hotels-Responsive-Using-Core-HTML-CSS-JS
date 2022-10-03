@@ -109,7 +109,7 @@
   let pwd = document.getElementById('pwd');
   let cpwd = document.getElementById('cpwd');
   let flag = 1;
-  var letters = /[a-zA-Z]/
+var letters = /^[a-zA-Z]*$/
 
 
 
@@ -209,7 +209,7 @@
       flag = 0;
     }
     
-    else if (!fname.value.match(letters)) {
+    else if (!letters.test(fname.value)) {
       document.getElementById('fnameerror').style.color = "red";
       document.getElementById('fname').className = "error";
       document.getElementById('fnameerror').innerHTML = "Please Enter Only Characters"
