@@ -212,7 +212,7 @@ var letters = /^[a-zA-Z]$/
     else if (!letters.test(fname.value)) {
       document.getElementById('fnameerror').style.color = "red";
       document.getElementById('fname').className = "error";
-      document.getElementById('fnameerror').innerHTML = "Please Enter Only Characters"
+      document.getElementById('fnameerror').innerHTML = "Please Enter Only [a-z or A-Z characters]"
       flag = 0;
     }
 
