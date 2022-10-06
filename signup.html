@@ -49,7 +49,7 @@
             </div>
             <div class="input-box">
               <span class="details">Email</span>
-              <input type="text" placeholder="Enter your email" required id="email" onkeyup="validateForm()">
+              <input type="text" placeholder="Enter your email" required id="email" onkeyup="validateForm()" onkeydown="return (event.keyCode!=32);">
               <p class="errorfield" id="emailerror"></p>
             </div>
             <div class="input-box">
