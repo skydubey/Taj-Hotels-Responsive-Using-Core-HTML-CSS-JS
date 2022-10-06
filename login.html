@@ -42,7 +42,7 @@
 
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your username" required id="username" class="demo" onkeyup="validateForm()">
+              <input type="text" placeholder="Enter your username" required id="username" class="demo" onkeydown="return (event.keyCode!=32);" onkeyup="validateForm()">
               <p id="unameerror" class="errorfield"></p>
             </div>
 
@@ -53,7 +53,7 @@
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="password" id="password" placeholder="Enter your password" required class="demo" onkeyup="validateForm()">
+              <input type="password" id="password" placeholder="Enter your password" required class="demo" onkeyup="validateForm()" onkeydown="return (event.keyCode!=32);">
               <p id="pwderror" class="errorfield"></p>
             </div>
             <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span
