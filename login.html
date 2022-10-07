@@ -42,18 +42,21 @@
 
             <div class="input-box">
               <span class="details">Username</span>
-              <input type="text" placeholder="Enter your username" required id="username" class="demo" onkeydown="return (event.keyCode!=32);" onkeyup="validateForm()">
+              <input type="text" placeholder="Enter your username" required id="username" class="demo"
+                onkeydown="return (event.keyCode!=32);" onkeyup="validateForm()">
               <p id="unameerror" class="errorfield"></p>
             </div>
 
             <div class="input-box">
               <span class="details">Phone Number</span>
-              <input type="number" placeholder="Enter your number" required id="mobile" class="demo" onkeyup="validateForm()">
+              <input type="number" placeholder="Enter your number" required id="mobile" class="demo"
+                onkeyup="validateForm()">
               <p id="mobileerror" class="errorfield"></p>
             </div>
             <div class="input-box">
               <span class="details">Password</span>
-              <input type="password" id="password" placeholder="Enter your password" required class="demo" onkeyup="validateForm()" onkeydown="return (event.keyCode!=32);">
+              <input type="password" id="password" placeholder="Enter your password" onfocus="keyPress(e)" required class="demo"
+                onkeyup="validateForm()" onkeydown="return (event.keyCode!=32);">
               <p id="pwderror" class="errorfield"></p>
             </div>
             <div><label for="showpwd"><input type="checkbox" name="" onclick="toggle(this)" id="showpwd"><span
@@ -76,6 +79,15 @@
   let username = document.getElementById('username');
   let mobile = document.getElementById('mobile');
   let flag = 1;
+
+  function keyPress(e) {
+    var e = window.event || e;
+    var key = e.keyCode;
+    //space pressed
+    if (key == 32) { //space
+      return;
+    }
+  }
 
 
 
@@ -164,9 +176,9 @@
     else {
       return false;
     }
-    
-    
-    
+
+
+
     // return flag;
     // return false;
   }
